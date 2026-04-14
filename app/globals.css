@@ -1,11 +1,53 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Reset */
 html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
-* {
+/* Fix box model */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+/* Font */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  min-height: 100%;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fix input UI */
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+body {
+  font-size: 15px;
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.35s ease;
 }
